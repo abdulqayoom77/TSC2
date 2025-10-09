@@ -62,3 +62,5 @@ function getName3(firstName: string, ...restOfName: string[]): string {
 // const nameParts:string[] = ["F.", "Kennedy", "Doe", "Abdul"];
 // console.log(getName3("John", ...nameParts));
 // console.log(getName3("John", "F.", "Kennedy", "Doe", "Abdul"));
+
+
