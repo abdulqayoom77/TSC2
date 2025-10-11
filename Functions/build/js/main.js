@@ -46,6 +46,7 @@ function getName2(firstName, ...restOfName) {
 function getName3(firstName, ...restOfName) {
     return firstName + " " + restOfName.join(" ");
 }
-// const nameParts:string[] = ["F.", "Kennedy", "Doe", "Abdul"];
-// console.log(getName3("John", ...nameParts));
-// console.log(getName3("John", "F.", "Kennedy", "Doe", "Abdul"));
+const add = (a, b) => {
+    return a + b;
+};
+console.log(add(1, 2));

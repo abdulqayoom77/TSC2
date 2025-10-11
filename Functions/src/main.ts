@@ -64,3 +64,30 @@ function getName3(firstName: string, ...restOfName: string[]): string {
 // console.log(getName3("John", "F.", "Kennedy", "Doe", "Abdul"));
 
 
+// ****************************** ENUMmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm  *********************************
+
+
+// enum Directions {
+//   North = "North",
+//   East = 'East',
+//   West = 'W',
+//   South = 'S',
+// }
+
+// const currDirection = Directions.East
+
+// console.log(currDirection)
+
+
+
+
+
+type Sum = (a: number, b: number) => {}
+const add:Sum = (a,b) => {
+  return a+b
+}
+
+console.log(add(1,2));
+
+
+interface Add2 
