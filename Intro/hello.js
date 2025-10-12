@@ -1,3 +1,4 @@
+"use strict";
 // function greet(name: string): string {
 //   return `Hello, ${name}!`;
 // }
@@ -7,13 +8,13 @@ function greet(num) {
     return num;
 }
 console.log(greet("hello"));
-var isActive = true;
+let isActive = true;
 console.log(isActive);
-var total = 1005;
+let total = 1005;
 console.log(total);
-var nme = "John Doe";
+let nme = "John Doe";
 console.log(nme);
-var list = [1, 2, 3, 4, 5];
+let list = [1, 2, 3, 4, 5];
 console.log(list);
-var obj = { name: "Alice", age: 30 };
+let obj = { name: "Alice", age: 30 };
 console.log(obj);

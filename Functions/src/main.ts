@@ -82,12 +82,10 @@ function getName3(firstName: string, ...restOfName: string[]): string {
 
 
 
-type Sum = (a: number, b: number) => {}
-const add:Sum = (a,b) => {
-  return a+b
-}
+// type Sum = (a: number, b: number) => {}
+// const add:Sum = (a,b) => {
+//   return a+b
+// }
 
-console.log(add(1,2));
+// console.log(add(1,2));
 
-
-interface Add2 
