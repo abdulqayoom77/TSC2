@@ -14,5 +14,7 @@ class BiscuitBananeKiRecipe {
 
 const p1 = new BiscuitBananeKiRecipe("Tiger", "23gram");
 const p2 = new BiscuitBananeKiRecipe("Super", "23gram");
+const p3 = new BiscuitBananeKiRecipe("Super", "23gram");
 p1.eat();
 p2.eat();
+p3.eat();
