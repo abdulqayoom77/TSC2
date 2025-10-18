@@ -194,6 +194,8 @@ abstract class Vehicle {
 
 // const Vehicle1 = new Vehicle()
 // const Vehicle1 = new Vehicle()
+// const Vehicle1 = new Vehicle()
+// const Vehicle1 = new Vehicle()
 
 class Car extends Vehicle {
   private mileage = 0;
