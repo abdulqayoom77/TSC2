@@ -42,8 +42,6 @@
 // // acc.balance = 10000;
 // // console.log(acc.balance);
 
-
-
 // // class Car {
 // //   constructor(public name:string){}
 // //   drive():void{
@@ -59,7 +57,6 @@
 // //     console.log(`${this.name} can drive and has more wheels`);
 // //   }
 // // }
-
 
 // // Base class — shared properties & methods
 // class User {
@@ -118,9 +115,6 @@
 // admin2.addUser(john2);
 // admin2.listUsers();
 
-
-
-
 // class Clothes {
 //   constructor(public name: string) {}
 // }
@@ -140,9 +134,6 @@
 // // winterClothes.suitableFor('winter')
 // winterClothes.benefits();
 
-
-
-
 // class MathUtils {
 //   static PI = 3.14159;
 
@@ -153,10 +144,6 @@
 
 // console.log(MathUtils.PI);
 // console.log(MathUtils.add(2, 3));
-
-
-
-
 
 // abstract class Shape {
 //   constructor(public color: string) {}
@@ -184,47 +171,175 @@
 // sq.describe();
 // console.log("Area:", sq.getArea());
 
+// abstract class Vehicle {
+//   constructor(public brand: string, protected year: number) {}
+//   abstract start(): void;
+// }
+
+// // const Vehicle1 = new Vehicle()
+// // const Vehicle1 = new Vehicle()
+
+// class Car extends Vehicle {
+//   private mileage = 0;
+//   static totalCars = 0;
+
+//   constructor(brand: string, year: number, public model: string) {
+//     super(brand, year);
+//     Car.totalCars++;
+//   }
+
+//   start() {
+//     console.log(`${this.brand} ${this.model} is starting...`);
+//   }
+
+//   drive(km: number) {
+//     this.mileage += km;
+//     console.log(`Driven ${km} km. Total mileage: ${this.mileage}`);
+//   }
+
+//   static showTotalCars() {
+//     console.log(`Total cars: ${Car.totalCars}`);
+//   }
+// }
+
+// const car1 = new Car("Honda", 2020, "Civic");
+// car1.start();
+// car1.drive(100);
+// Car.showTotalCars();
+// const car2 = new Car("Audi", 2022, "R8 E-Tron");
+// car2.start();
+// car2.drive(200);
+// Car.showTotalCars();
+
+// index signatures and typeof
+
+// interface StringNumberMap {
+//   [key: string]: number;
+// }
+// const scores: StringNumberMap = {
+//   Alice: 90,
+//   Bob: 85,
+// };
+// console.log(scores.Alice); // 90
+// console.log(scores["Bob"]); // 85
+// const key: keyof StringNumberMap = "Charlie";
+// scores[key] = 95; // Adding a new entry
+// console.log(scores[key]); // 95
+// console.log(scores.Charlie); // 95
+// console.log(scores["Charlie"]); // 95
+
+// type Point = {
+//   x: number;
+//   y: number;
+// };
+// const p1: Point = { x: 10, y: 20 };
+// const p2: Point = { x: 30, y: 40 };
+// function distance(a: Point, b: Point): number {
+//   const dx = a.x - b.x;
+//   const dy = a.y - b.y;
+//   return Math.sqrt(dx * dx + dy * dy);
+// }
+// console.log(distance(p1, p2)); // Distance between p1 and p2
+
+// // type obj = {
+// //   [name: string]: string;
+// // };
+
+// // const user: obj = {
+// //   name: "John",
+// //   age: "30",
+// //   class: `10th`,
+// // };
 
 
 
-abstract class Vehicle {
-  constructor(public brand: string, protected year: number) {}
-  abstract start(): void;
-}
 
-// const Vehicle1 = new Vehicle()
-// const Vehicle1 = new Vehicle()
-// const Vehicle1 = new Vehicle()
-// const Vehicle1 = new Vehicle()
 
-class Car extends Vehicle {
-  private mileage = 0;
-  static totalCars = 0;
+// type Settings = {
+//   theme: number;
+//   [key: string]: number; // all values must be string
+// };
 
-  constructor(brand: string, year: number, public model: string) {
-    super(brand, year);
-    Car.totalCars++;
-  }
+// const userSettings: Settings = {
+//   theme: 7,
+//   language: 1,
+//   layout: 2,
+// };
 
-  start() {
-    console.log(`${this.brand} ${this.model} is starting...`);
-  }
 
-  drive(km: number) {
-    this.mileage += km;
-    console.log(`Driven ${km} km. Total mileage: ${this.mileage}`);
-  }
+// type ReadOnlyScores = {
+//  readonly[player: string]: number;
+// };
 
-  static showTotalCars() {
-    console.log(`Total cars: ${Car.totalCars}`);
-  }
-}
+// const scores: ReadOnlyScores = {
+//   alice: 10,
+//   bob: 15,
+// };
+// // scores.alice = 20;
+// console.log(scores);
 
-const car1 = new Car("Honda", 2020, "Civic");
-car1.start();
-car1.drive(100);
-Car.showTotalCars();
-const car2 = new Car("Audi", 2022, "R8 E-Tron");
-car2.start();
-car2.drive(200);
-Car.showTotalCars();
+// // scores.alice = 20; ❌ Cannot assign to 'alice' because it is a read-only property
+
+// // type UserType = {
+// //   name: string;
+// //   age: number;
+// // };
+
+// let user = {
+//   name: "Alice",
+//   age: 25,
+// };
+
+// type UserType = typeof user;
+
+// const anotherUser: UserType = {
+//   name: "Bob",
+//   age: 30,
+// };
+
+
+
+// function greet(name: string) {
+//   return `Hello, ${name}`;
+// }
+// greet("Alice");
+
+// type GreetFunction = typeof greet;
+
+// const greetCopy: GreetFunction = (n) => `Hi, ${n}`;
+// greetCopy("Charlie");
+
+
+// const user = {
+//   name: "Alice",
+//   age: 25,
+//   isAdmin: true,
+// };
+
+// type UserKeys = keyof typeof user;
+// // "name" | "age" | "isAdmin"
+
+// function getProp(key: UserKeys) {
+//   console.log(key);
+// }
+
+// getProp("age"); // ✅
+// // getProp("email"); // ❌ Error
+
+
+
+
+// const prices = {
+//   apple: 100,
+//   banana: 60,
+//   orange: 80,
+// };
+
+// type PriceList = typeof prices;
+
+// function getPrice(fruit: keyof PriceList) {
+//   return prices[fruit];
+// }
+
+
+// console.log(getPrice("apple")); // ✅ 100
