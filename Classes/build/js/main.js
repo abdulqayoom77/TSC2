@@ -269,3 +269,66 @@
 //   return prices[fruit];
 // }
 // console.log(getPrice("apple")); // ✅ 100
+// class Person {
+//   name: string;
+//   age: number;
+//   constructor(name: string, age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   introduce() {
+//     return `My name is ${this.name} and I am ${this.age} years old.`;
+//   }
+// }
+// const person1 = new Person("John", 30);
+// console.log(person1);
+// console.log(person1.introduce());
+// class Person2 {
+//   constructor(protected name: string, public age: number) {
+//     this.name = name;
+//     this.age = age;
+//   }
+//   introduce():string {
+//     return `My name is ${this.name} and I am ${this.age} years old.`;
+//   }
+// }
+// class Person3 extends Person2 {
+//   greet():string {
+//     return `Hello, my name is ${this.name}.`; // Accessing protected property
+//   }
+// }
+// const person3 = new Person3("Alice", 28);
+// console.log(person3.introduce());
+// console.log(person3.age); // Accessing public property
+// console.log(person3.name);// Error: Property 'name' is protected and only accessible within class 'Person2' and its subclasses.
+// console.log(person3.greet());
+// class User {
+//   private _name: string = "";
+//   get name(): string {
+//     return this._name;
+//   }
+//   set name(newName: string) {
+//     if (newName.length < 3) {
+//       throw new Error("Name must be at least 3 characters long.");
+//     }
+//     this._name = newName;
+//   }
+// }
+// const user = new User();
+// user.name = "Abdul"; // ✅ setter called
+// console.log(user.name); // ✅ getter called → Abdul
+// // user.name = "Al"; ❌ Error: Name must be at least 3 characters long.
+// class Person {
+//     constructor(private _name: string, public _age: number) {}
+//     get getName(): string{
+//         return this._name;
+//     }
+//     set setName(newName:string){
+//         this._name = newName;
+//     }
+// }
+// const person = new Person("John", 30);
+// // console.log(person._name);
+// person.setName = "Doe";
+// console.log(person.getName);
+// console.log(person._age);
